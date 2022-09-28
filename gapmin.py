@@ -17,3 +17,23 @@ print("\n",df.shape) #retorna o total de linhas e colunas
 print("\n",df.columns) #retorna apenas o nome das colunas
 
 print("\n",df.dtypes) #retorna o tipo de dado armazenado em caad coluna
+
+print("\n",df.tail())
+
+print("\n",df.describe())
+
+print("\n",df["Continente"].unique())
+
+oceania = df.loc[df["Continente"] == "Oceania"]
+
+print("\n",oceania.head())
+
+print("\n", oceania["Continente"].unique())
+
+print("\n",df.groupby("Continente")["Pais"].nunique())
+
+print("\n",df.groupby("Ano")["Expectativa de vida"].mean())
+
+print("\n",df["PIB"].mean())
+
+print("\n",df["PIB"].sum())
