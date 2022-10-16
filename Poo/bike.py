@@ -1,5 +1,8 @@
 # No python existe a convenção de se utilizar self no lugar do this
 
+from tomlkit import key
+
+
 class bike:
     def __init__(self,color, model, year, value):
         self.color = color
@@ -16,8 +19,17 @@ class bike:
     def run(self):
         print("The bike is running")
 
+    # def __str__(self):
+    #     return f"Bike:\nColor: {self.color}\nModel: {self.model}\nYear: {self.year}\nValue: {self.value}"
 
-b1 = bike("Blue","Caloi",2019,600)
+    def __str__(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{key} = {value}' for key, value in self.__dict__.items()])}"
+        # Dessa maneira conseguimos retornar o nome da classe, suas propriedas e seus valores   
+
+b1 = bike("Blue","Caloi", 2019,600)
 b1.honk()
 b1.stop()
 b1.run()
+
+b2 = bike("Green","Monark", 2020, 500)
+print(b2)
