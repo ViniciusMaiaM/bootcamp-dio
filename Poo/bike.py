@@ -4,11 +4,12 @@ from tomlkit import key
 
 
 class bike:
-    def __init__(self,color, model, year, value):
+    def __init__(self,color, model, year, value, gear):
         self.color = color
         self.model = model
         self.year = year
         self.value = value
+        self.marcha = gear
 
     def honk(self):
         print("Plim Plim...")
@@ -18,6 +19,15 @@ class bike:
 
     def run(self):
         print("The bike is running")
+
+    def change_gear(self, num_gear):
+        print("Changing gear")
+
+        def new_gear():
+            if num_gear > self.gear:
+                print("Gear changed")
+            else:
+                print("Not possible")
 
     # def __str__(self):
     #     return f"Bike:\nColor: {self.color}\nModel: {self.model}\nYear: {self.year}\nValue: {self.value}"
