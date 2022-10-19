@@ -17,14 +17,25 @@ class Ave(Animal):
         super().__init__(**kw)
         # As duas maneiras são validas para a utilização de kw
 
+
 class Gato(Mamifero):
     pass
 
-# class Leao(Mamifero):
-#     pass
+class FalarMixin:
+    def falar(self):
+        return ("Oi, estou falando!")
+    # Classe criada para que se faça apenas aquilo e seja reutilizada
+    # em diferentes classes
 
-class Ornitorrico(Mamifero,Animal):
-    pass
+class Ornitorrico(Mamifero,Animal, FalarMixin):
+    def __init__(self,cor_pelo,cor_bico,num_patas):
+        # print(Ornitorrico.__mro__)
+        # Assim conseguimos a ordem de resolução/leitura 
+        # dos atributos e metodos
+
+        super().__init__(cor_pelo=cor_pelo,
+        cor_bico=cor_bico,num_patas=num_patas)
+        # Definindo novamente os construtores
 
 gat = Gato(num_patas=4, cor_pelo="Branco")
 print(gat)
@@ -34,7 +45,7 @@ print(gat)
 
 
 orn = Ornitorrico(num_patas=4,cor_pelo="Marrom",cor_bico="Amarelo")
-print(orn)
+print(orn.falar())
 
 # Para evitar problemas se retira os argumentos 
 # que são da classe filha e também na classe pai
