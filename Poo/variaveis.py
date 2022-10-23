@@ -22,6 +22,6 @@ est_1.matricula = 3 #Aqui modifica-se apenas a variavel deste objeto
 mostra_valor(est_1,est_2)
 
 Aluno.escola = "Python" #Aqui modificamos para todos os objetos criados com base na classe
-#Variaveis de classe são unicas pra todos os objetos
 
 mostra_valor(est_1,est_2)
+#Variaveis de classe são unicas pra todos os objetos
